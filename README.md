@@ -56,3 +56,16 @@ Setup Hadoop Environment Variables
 $cd ~
 
 $vi .bashrc
+
+paste following to the end of the file 
+
+#Hadoop variables
+export JAVA_HOME=/usr/lib/jvm/jdk/
+export HADOOP_INSTALL=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export YARN_HOME=$HADOOP_INSTALL
+###end of paste
