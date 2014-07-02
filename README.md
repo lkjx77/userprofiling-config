@@ -73,33 +73,43 @@ $ cd /usr/local/hadoop/etc/hadoop
 $ vi core-site.xml
 #Paste following between <configuration>
 
-
-   fs.default.name
-   hdfs://localhost:9000
-
+<configuration>
+    <property>
+        <name>fs.default.name</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
 
 
 $ vi yarn-site.xml
 #Paste following between <configuration>
 
 
-   yarn.nodemanager.aux-services
-   mapreduce_shuffle
+<configuration>
 
+<!-- Site specific YARN configuration properties -->
 
-   yarn.nodemanager.aux-services.mapreduce.shuffle.class
-   org.apache.hadoop.mapred.ShuffleHandler
-
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+</configuration>
 
 
 $ mv mapred-site.xml.template mapred-site.xml
 $ vi mapred-site.xml
 #Paste following between <configuration>
 
-
-   mapreduce.framework.name
-   yarn
-
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+</configuration>
 
 
 $ cd ~
@@ -108,18 +118,20 @@ $ mkdir -p mydata/hdfs/datanode
 $ cd /usr/local/hadoop/etc/hadoop
 $ vi hdfs-site.xml
 Paste following between <configuration> tag
-
-
-   dfs.replication
-   1
- 
- 
-   dfs.namenode.name.dir
-   file:/home/hduser/mydata/hdfs/namenode
- 
- 
-   dfs.datanode.data.dir
-   file:/home/hduser/mydata/hdfs/datanode
+<configuration>
+<property>
+    <name>dfs.replication</name>
+    <value>1</value>
+</property>
+<property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:/home/kim/mydata/hdfs/namenode</value>
+</property>
+<property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/home/hduser/mydata/hdfs/datanode</value>
+</property>
+</configuration>
  
 
 Format Namenode
