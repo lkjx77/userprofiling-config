@@ -41,7 +41,7 @@ Setup Hadoop Environment Variables
 $cd ~
 $vi .bashrc
 
-paste following to the end of the file
+paste following to the end of the file 
 
 #Hadoop variables
 export JAVA_HOME=/usr/lib/jvm/jdk/
