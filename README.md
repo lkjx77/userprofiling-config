@@ -160,34 +160,55 @@ Paste following between <configuration> tag
  
 
 Format Namenode
+
 hduser@ubuntu40:~$ hdfs namenode -format
+
 Start Hadoop Service
+
 $ start-dfs.sh
+
 ....
+
 $ start-yarn.sh
+
 ....
 
 hduser@ubuntu40:~$ jps
+
 If everything is sucessful, you should see following services running
+
 2583 DataNode
 2970 ResourceManager
 3461 Jps
 3177 NodeManager
 2361 NameNode
 2840 SecondaryNameNode
+
 Run Hadoop Example
+
 hduser@ubuntu: cd /usr/local/hadoop
+
 hduser@ubuntu:/usr/local/hadoop$ hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar pi 2 5
 
+
 Number of Maps  = 2
+
 Samples per Map = 5
+
 13/10/21 18:41:03 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
 Wrote input for Map #0
+
 Wrote input for Map #1
+
 Starting Job
+
 13/10/21 18:41:04 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+
 13/10/21 18:41:04 INFO input.FileInputFormat: Total input paths to process : 2
+
 13/10/21 18:41:04 INFO mapreduce.JobSubmitter: number of splits:2
+
 13/10/21 18:41:04 INFO Configuration.deprecation: user.name is deprecated. Instead, use mapreduce.job.user.name
 
 
