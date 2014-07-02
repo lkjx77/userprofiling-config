@@ -94,8 +94,11 @@ Re-login into Ubuntu using hdser and check hadoop version
 $ hadoop version
 
 Configure Hadoop
+
 $ cd /usr/local/hadoop/etc/hadoop
+
 $ vi core-site.xml
+
 #Paste following between <configuration>
 
 <configuration>
@@ -107,6 +110,7 @@ $ vi core-site.xml
 
 
 $ vi yarn-site.xml
+
 #Paste following between <configuration>
 
 
@@ -126,8 +130,10 @@ $ vi yarn-site.xml
 
 
 $ mv mapred-site.xml.template mapred-site.xml
+
 $ vi mapred-site.xml
-#Paste following between <configuration>
+
+#Paste following between<configuration>
 
 <configuration>
   <property>
@@ -138,11 +144,17 @@ $ vi mapred-site.xml
 
 
 $ cd ~
+
 $ mkdir -p mydata/hdfs/namenode
+
 $ mkdir -p mydata/hdfs/datanode
+
 $ cd /usr/local/hadoop/etc/hadoop
+
 $ vi hdfs-site.xml
+
 Paste following between <configuration> tag
+
 <configuration>
 <property>
     <name>dfs.replication</name>
